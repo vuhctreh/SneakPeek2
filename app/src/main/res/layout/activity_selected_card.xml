@@ -5,13 +5,128 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SelectedCardActivity"
-    android:background="@color/black">
+    android:background="@color/black"
+    android:fitsSystemWindows="true">
+
+    <androidx.appcompat.widget.Toolbar
+        app:titleTextColor="@color/white"
+        android:background="@color/black"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        />
+
     <TextView
-        android:id="@+id/selectedCard"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/subtitle"
+        android:layout_below="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:text="Current Price In Your Size: "
+        />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/subtitle"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:padding="10dp"
+        android:id="@+id/price"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/text_bg_purple"
+        />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:paddingStart="45dp"
+        android:id="@+id/subtitleSku"
+        android:layout_below="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:text="SKU: "
+        />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/subtitleSku"
+        android:id="@+id/skuField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="bruh"
         android:textColor="@color/white"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:paddingStart="45dp"
+        android:id="@+id/subtitleDate"
+        android:layout_below="@+id/skuField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:text="Released: "
+        />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/subtitleDate"
+        android:id="@+id/dateField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:text="bruh"
+        />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:paddingStart="45dp"
+        android:id="@+id/subtitleRetail"
+        android:layout_below="@+id/dateField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:text="Retail: "
+        />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/subtitleRetail"
+        android:id="@+id/retailField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:text="Bruh"
+        />
+
+    <TextView
+        android:textSize="12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Prices courtesy of StockX"
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="45dp"
+        />
+
+
 
 </RelativeLayout>

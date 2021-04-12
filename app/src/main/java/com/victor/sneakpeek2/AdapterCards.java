@@ -13,16 +13,27 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import java.util.List;
 
+/**
+ * The type Adapter cards.
+ */
 public class AdapterCards extends PagerAdapter {
 
     private List<Model> models;
     private LayoutInflater inflater;
     private Context context;
+    private String size;
 
-    // constructor
-    public AdapterCards(List<Model> models, Context context) {
+    /**
+     * Instantiates a new Adapter cards.
+     *
+     * @param models  the models
+     * @param context the context
+     * @param size    the size
+     */
+    public AdapterCards(List<Model> models, Context context, String size) {
         this.models = models;
         this.context = context;
+        this.size = size;
     }
 
     @Override
@@ -61,7 +72,8 @@ public class AdapterCards extends PagerAdapter {
             @Override
             public void onClick(View v) {
                 Intent activity = new Intent(context, SelectedCardActivity.class)
-                        .putExtra("data", models.get(position));
+                        .putExtra("data", models.get(position))
+                        .putExtra("size", size);
                 context.startActivity(activity);
             }
         });

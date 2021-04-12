@@ -18,7 +18,9 @@
         />
 
     <EditText
+        android:inputType="text"
         android:id="@+id/shoeName"
+        android:maxLines="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
@@ -32,6 +34,8 @@
         android:textSize="14sp" />
 
     <EditText
+        android:inputType="text"
+        android:maxLines="1"
         android:id="@+id/sku"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

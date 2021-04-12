@@ -14,47 +14,42 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * The type Add shoe.
+ */
 public class AddShoe extends AppCompatActivity {
 
+    /**
+     * The Toolbar.
+     */
     Toolbar toolbar;
-    EditText shoeName, shoeSKU;
+    /**
+     * The Shoe name.
+     */
+    EditText shoeName,
+    /**
+     * The Shoe sku.
+     */
+    shoeSKU;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_shoe);
 
+        //Set toolbar title
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Add to your collection: ");
+        // Set toolbar as action bar and enable back button
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
+        // Assign elements in view to their respective variables
         shoeName = findViewById(R.id.shoeName);
         shoeSKU = findViewById(R.id.sku);
-
-        shoeName.addTextChangedListener(new TextWatcher() {
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(s.length() != 0){
-
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
     }
 
+    // creates options menu using save_menu layout
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -64,21 +59,26 @@ public class AddShoe extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        // handles menu being clicked
         if(item.getItemId() == R.id.save){
+            // saves contents of fields shoeName and shoeSKU to SQL database
             Shoe shoe = new Shoe(shoeName.getText().toString(), shoeSKU.getText().toString());
             CollectionDatabase db = new CollectionDatabase(this);
             db.addShoe(shoe);
+            //toast notification upon successful save
             Toast.makeText(this, "Successfully added to collection.", Toast.LENGTH_SHORT).show();
+            // redirect to main activity
             goToMain();
         }
-        if(item.getItemId() == R.id.delete){
-            Toast.makeText(this, "Shoe discarded", Toast.LENGTH_SHORT).show();
+        if(item.getItemId() == android.R.id.home) {
+            //handle back button click
             goToMain();
         }
         return true;
     }
 
     private void goToMain() {
+        // redirects to main
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
