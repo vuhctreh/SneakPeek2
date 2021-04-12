@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddShoe"
+    android:background="@color/black"
+    android:fitsSystemWindows="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hapticFeedbackEnabled="false"
+        app:titleTextColor="@color/white"
+        android:background="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/shoeName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:autofillHints="Shoe Name"
+        android:background="@null"
+        android:hint="Shoe Name"
+        android:paddingTop="50dp"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/sku"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shoeName"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:autofillHints="Shoe SKU"
+        android:background="@null"
+        android:hint="Shoe SKU"
+        android:paddingTop="50dp"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+</RelativeLayout>
